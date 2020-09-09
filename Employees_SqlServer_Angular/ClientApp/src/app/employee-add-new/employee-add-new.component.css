@@ -1,0 +1,23 @@
+table{
+    width: 400px;
+}
+
+button{
+    border: 0;
+    /*border-color: lightgreen;*/
+    border-radius: 5px;
+}
+
+.add-new{
+    font-weight: bold;
+    background-color: lightgreen;
+    color: azure;
+
+    padding: 10px 20px;
+}
+
+.add-new:hover{
+    
+    background-color: transparent;
+    color: lightgreen;
+}

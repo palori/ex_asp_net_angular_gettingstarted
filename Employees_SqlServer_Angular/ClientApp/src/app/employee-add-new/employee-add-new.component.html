@@ -1,0 +1,39 @@
+<div *ngIf="employee">
+
+    <h2>Add a new employee</h2>
+
+    <p>Fill in the information of the new employee.</p>
+    <p>The ID will be assigned automatically.</p>
+  
+    <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="employee">
+      <thead>
+        <tr>
+          <th>Attribute</th>
+          <th>Information</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Name</td>
+          <td><input [(ngModel)]="employee.name" placeholder="name"/></td>
+        </tr>
+        <tr>
+          <td>Surame</td>
+          <td><input [(ngModel)]="employee.surname" placeholder="surname"/></td>
+        </tr>
+        <tr>
+          <td>Job</td>
+          <td><input [(ngModel)]="employee.job" placeholder="job"/></td>
+        </tr>
+        <tr>
+          <td>Salary</td>
+          <td><input [(ngModel)]="employee.salary" placeholder="salary"/></td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div>
+      <span><button class="add-new" (click)="updateEmployee()">Save</button></span>
+    </div>
+    
+  </div>

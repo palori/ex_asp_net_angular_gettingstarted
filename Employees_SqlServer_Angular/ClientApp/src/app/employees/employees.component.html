@@ -1,0 +1,44 @@
+<div>
+  <div class="col">
+    <h1 id="tableLabel">Employees</h1>
+    <p>List of employees of the company.</p>
+    <p *ngIf="!employees"><em>Loading...</em></p>
+  </div>
+  <div class="col" *ngIf="employees">
+    <a routerLink="/employee/new">
+      <button class="add-new">Add a new employee</button>
+    </a>
+  </div>
+</div>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="employees">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>Job</th>
+      <th>Salary</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{ employee.id }}</td>
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.surname }}</td>
+      <td>{{ employee.job }}</td>
+      <td>{{ employee.salary }}</td>
+      <td>
+        <span>
+          <a routerLink="/employee/{{employee.id}}">
+            <button class="details">Details</button>
+          </a>
+        </span>
+        <span>
+          <button class="delete" (click)="deleteEmployee(employee)">Delete</button>
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>

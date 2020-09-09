@@ -1,0 +1,43 @@
+.col{
+    width: 80%;
+    display: inline-block;
+}
+
+.col:last-child{
+    width: 20%;
+    align-content: right;
+}
+
+button{
+    border: 0;
+    border-radius: 5px;
+}
+
+.details{
+    background-color: aliceblue;
+}
+
+.details:hover{
+    background-color: skyblue;
+}
+
+.delete{
+    background-color: snow;
+    color: darkred;
+}
+
+.delete:hover{
+    background-color: darkred;
+    color: snow;
+}
+
+.add-new{
+    font-weight: bold;
+    background-color: transparent;
+    color: lightgreen;
+}
+
+.add-new:hover{
+    background-color: lightgreen;
+    color: azure;
+}

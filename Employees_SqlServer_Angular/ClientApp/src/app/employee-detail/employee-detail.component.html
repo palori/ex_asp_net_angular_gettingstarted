@@ -1,0 +1,40 @@
+<div *ngIf="employee">
+
+  <h2>{{employee.name | uppercase}} Details</h2>
+
+  <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="employee">
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Information</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ID</td>
+        <td>{{employee.id}}</td>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td><input [(ngModel)]="employee.name" placeholder="name"/></td>
+      </tr>
+      <tr>
+        <td>Surame</td>
+        <td><input [(ngModel)]="employee.surname" placeholder="surname"/></td>
+      </tr>
+      <tr>
+        <td>Job</td>
+        <td><input [(ngModel)]="employee.job" placeholder="job"/></td>
+      </tr>
+      <tr>
+        <td>Salary</td>
+        <td><input [(ngModel)]="employee.salary" placeholder="salary"/></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div>
+    <span><button class="save" (click)="updateEmployee()">Save</button></span>
+  </div>
+  
+</div>
