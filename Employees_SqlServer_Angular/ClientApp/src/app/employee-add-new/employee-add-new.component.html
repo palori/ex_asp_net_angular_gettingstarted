@@ -1,11 +1,11 @@
-<div *ngIf="employee">
+<div>
 
     <h2>Add a new employee</h2>
 
     <p>Fill in the information of the new employee.</p>
     <p>The ID will be assigned automatically.</p>
   
-    <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="employee">
+    <table class='table table-striped' aria-labelledby="tableLabel">
       <thead>
         <tr>
           <th>Attribute</th>
@@ -15,25 +15,38 @@
       <tbody>
         <tr>
           <td>Name</td>
-          <td><input [(ngModel)]="employee.name" placeholder="name"/></td>
+          <td>
+            <input #name/>
+            <!--label id="empty-name" class="error-field">*</label-->
+          </td>
         </tr>
         <tr>
           <td>Surame</td>
-          <td><input [(ngModel)]="employee.surname" placeholder="surname"/></td>
+          <td>
+            <input #surname/>
+            <!--label id="empty-surname" class="error-field">*</label-->
+          </td>
         </tr>
         <tr>
           <td>Job</td>
-          <td><input [(ngModel)]="employee.job" placeholder="job"/></td>
+          <td>
+            <input #job/>
+            <!--label *ngIf="errorJob" id="empty-job" class="error-field">*</label-->
+          </td>
         </tr>
         <tr>
           <td>Salary</td>
-          <td><input [(ngModel)]="employee.salary" placeholder="salary"/></td>
+          <td>
+            <input #salary/>
+            <!--label id="empty-salary" class="error-field">*</label>
+            <label id="error-salary" class="error-field">Number</label-->
+          </td>
         </tr>
       </tbody>
     </table>
   
     <div>
-      <span><button class="add-new" (click)="updateEmployee()">Save</button></span>
+      <span><button class="add-new" (click)="addEmployee(name.value, surname.value, job.value, salary.value)">Save</button></span>
     </div>
     
   </div>

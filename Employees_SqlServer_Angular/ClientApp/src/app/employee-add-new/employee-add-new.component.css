@@ -2,6 +2,7 @@ table{
     width: 400px;
 }
 
+/* buttons */
 button{
     border: 0;
     /*border-color: lightgreen;*/
@@ -20,4 +21,22 @@ button{
     
     background-color: transparent;
     color: lightgreen;
+}
+
+/* error labels */
+.error-field{
+    color: darkred;
+    margin: 0 0 0 10px;
+    font-weight: bold;
+    font-size: large;
+    /*visibility: hidden;*/
+}
+
+#empty-name{
+    visibility: visible;
+}
+
+#error-salary{
+    visibility: visible;
+    font-size: inherit;
 }

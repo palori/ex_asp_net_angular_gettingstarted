@@ -32,6 +32,16 @@ export class EmployeeDetailComponent implements OnInit {
   }
 
   updateEmployee(){
+    if(!isNaN(Number(this.employee.salary))){
+      this.employee.salary = Number(this.employee.salary);
+
+      this.update();
+    } else{
+        console.log("salary error:", this.employee.salary);
+    }
+  }
+
+  update(){
     this.employeeService.updateEmployee(this.employee)
     //.subscribe(employee => this.employee = employee);
     .subscribe(() => this.goBack());

@@ -10,6 +10,7 @@ import { EmployeesComponent } from './employees/employees.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
 import { AppRoutingModule } from './app-routing.module';
 import { EmployeeAddNewComponent } from './employee-add-new/employee-add-new.component';
+import { EmployeeSearchComponent } from './employee-search/employee-search.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { EmployeeAddNewComponent } from './employee-add-new/employee-add-new.com
     HomeComponent,
     EmployeesComponent,
     EmployeeDetailComponent,
-    EmployeeAddNewComponent
+    EmployeeAddNewComponent,
+    EmployeeSearchComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

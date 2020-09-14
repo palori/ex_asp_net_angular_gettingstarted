@@ -42,6 +42,26 @@ namespace Employees_SqlServer.Controllers
             return employee;
         }
 
+        // GET: api/Employees/q/?name={substring of name searching for}
+        /* Decorators - option 1 */
+        [HttpGet("q")]
+        /* Decorators - option 2 (does exactly the same as option 1)
+        [HttpGet]
+        [Route("q")]*/
+        public async Task<ActionResult<IEnumerable<Employee>>> GetEmployeesQueryName(
+            [FromQuery(Name = "name")] string name
+            )
+        {
+            var all_employees = await _context.Employees.ToListAsync();
+
+            if (name != null){
+                all_employees = all_employees.Where(employee => employee.Name.ToLower().Contains(name)).ToList();
+            }
+
+            return all_employees;
+            
+        }
+
         // PUT: api/Employees/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.

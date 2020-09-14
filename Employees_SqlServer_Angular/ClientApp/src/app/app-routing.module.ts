@@ -7,10 +7,12 @@ import { EmployeeDetailComponent } from './employee-detail/employee-detail.compo
 import { EmployeeAddNewComponent } from './employee-add-new/employee-add-new.component';
 
 const routes: Routes = [
+  // static routes
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'employees', component: EmployeesComponent },
-  { path: 'employee/:id', component: EmployeeDetailComponent },
-  { path: 'employee/new', component: EmployeeAddNewComponent }
+  { path: 'employee/add', component: EmployeeAddNewComponent },
+  // other
+  { path: 'employee/:id', component: EmployeeDetailComponent }
 ];
 
 @NgModule({

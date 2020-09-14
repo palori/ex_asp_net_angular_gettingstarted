@@ -5,7 +5,8 @@
     <p *ngIf="!employees"><em>Loading...</em></p>
   </div>
   <div class="col" *ngIf="employees">
-    <a routerLink="/employee/new">
+    <app-employee-search></app-employee-search>
+    <a routerLink="/employee/add">
       <button class="add-new">Add a new employee</button>
     </a>
   </div>
